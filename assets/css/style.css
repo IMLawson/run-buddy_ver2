@@ -17,13 +17,10 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     position: sticky;
-    top: 0;
     position: -webkit-sticky;
-    position: sticky;
     top: 0;
     background-image: url(https://static.fullstack-bootcamp.com/module-1/hero-bg%2Ejpg);
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
     background-position: 80%;
 }
@@ -88,7 +85,6 @@ section {
 .hero {
     background-image: url(https://static.fullstack-bootcamp.com/module-1/hero-bg%2Ejpg);
     background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -118,14 +114,16 @@ section {
     background-color: rgb(252, 225, 56, 0.8);
     padding: 20px;
     color: #024e76;
-    /* border can also be border: 3px solid #024e76; */
-    border-style: solid;
-    border-width: 3px;
-    border-color: #024e76;
+    border: 3px solid #024e76;
     width: 40%;
     margin: 3.5%;
     border-radius: 15px;
 }
+
+.hero-form button:hover {
+    background-color: #39a6b2;
+}
+
 .hero-form h3 {
     font-size: 24px;
     margin: 0;
@@ -135,7 +133,7 @@ section {
 }
 .form-input {
     border: 1px solid #024e76;
-    display: black;
+    display: block;
     padding: 7px 15px;
     font-size: 16px;
     color: #024e76;
@@ -159,12 +157,28 @@ section {
     font-size: 16px;
     border-radius: 10px;
 }
-.hero-form button:hover {
-    background-color: #39a6b2;
-}
+
 /* HERO STYLES END */
 
 /* WHAT WE DO */
+
+.section-title {
+    font-size: 48px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid;
+    margin: 0 auto 35px auto;
+    color: #024e76;
+    text-align: center;
+    width: 50%;
+}
+
+.primary-border {
+    border-color: #fce138;
+}
+.secondary-border {
+    border-color: #39a6b2;
+}
+
 .intro p {
     line-height: 1.7;
     color: #39a6b2;
@@ -175,19 +189,24 @@ section {
 }
 
 /* WHAT YOU DO */
+
+.steps {
+    background: #fce138;
+}
+
 .step {
     margin:50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
 }
 
-.steps {
-    background: #fce138;
+.step:last-child {
+    border-bottom: none;
 }
 
 .step h3 {
@@ -227,18 +246,6 @@ section {
     color: #024e76;
 }
 
-.section-title {
-    font-size: 48px;
-    color: #024e76;
-    border-bottom: 3px solid;
-}
-.primary-border {
-    border-color: #fce138;
-}
-.secondary-border {
-    border-color: #39a6b2;
-}
-
 .trainers {
     width: 100%;
     margin: 0 auto;
@@ -253,6 +260,7 @@ section {
     color: #fce138;
     flex: 1;
 }
+
 .trainer img {
     width: 100%;
 }
@@ -269,30 +277,11 @@ section {
     font-size: 22px;
     margin-bottom: 15px;
 }
+
 .trainer-bio p {
     font-size: 17px;
 }
-.text-left {
-    text-align: left;
-}
-.text-right {
-    text-align: right;
-}
 
-.flex-row {
-    display: flex;
-}
-
-.section-title {
-    font-size: 55px;
-    display: inline-block;
-    padding-bottom: 20px;
-    border-bottom: 3px solid;
-    margin: 0 auto 35px auto;
-    color: #024e76;
-    text-align: center;
-    width: 50%;
-}
 /* REACH OUT STYLES START */
 .contact {
     background: #024e76;
@@ -318,6 +307,7 @@ section {
 .contact-info div {
     color: white;
 }
+
 .contact-info h3 {
     color: #fce138;
     font-size: 32px;
@@ -339,6 +329,12 @@ section {
     margin-bottom: 15px;
     margin-top: 5px;
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 .contact-form button {
@@ -358,7 +354,32 @@ section {
 .contact-info a {
     color: #fce138;
 }
+
 /* REACH OUT STYLES END */
+
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.flex-row {
+    display: flex;
+}
+
+
+/*.step:nth-child(even) {
+    border-bottom: 1px solid #39a6b2;
+}
+.step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
+}
+.section-title {
+    font-size: 48px;
+    color: #024e76;
+    border-bottom: 3px solid;
+}*/
+
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
@@ -421,6 +442,9 @@ section {
   }
   .step-text {
     flex: 100%
+  }
+  .trainer-bio h3, .trainer-bio h4 {
+    display: block;
   }
 }
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
